@@ -1,0 +1,21 @@
+package com.bhanu.CustomerDataManagement.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.bhanu.CustomerDataManagement.entity.Person;
+import com.bhanu.CustomerDataManagement.service.PersonService;
+
+@RestController
+public class PersonController 
+{
+	@Autowired
+	private PersonService personService;
+	
+	@PostMapping("/save")
+      public Person save(Person person)
+      {
+		return personService.save(person);
+      }
+}
